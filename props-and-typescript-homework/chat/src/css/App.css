@@ -1,0 +1,26 @@
+.chat-history ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.typing {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 30px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #86bb71;
+}
+
+.typing-dot:nth-child(2) {
+    opacity: 0.65;
+}
+
+.typing-dot:nth-child(3) {
+    opacity: 0.3;
+}
