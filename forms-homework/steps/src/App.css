@@ -1,0 +1,138 @@
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.entry-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field-label {
+  font-size: 15px;
+}
+
+.field-input {
+  width: 200px;
+  height: 48px;
+  padding: 0 16px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.field-input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(35, 35, 35, 0.15);
+}
+
+.submit-button {
+  height: 48px;
+  padding: 0 26px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.submit-button:hover {
+  background-color: rgba(35, 35, 35, 0.06);
+}
+
+.submit-button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.error {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: #c62828;
+}
+
+.hint {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.steps-table {
+  width: 100%;
+  margin-top: 36px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.steps-table th {
+  padding: 0 8px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.steps-table th:first-child,
+.steps-table td:first-child {
+  width: 38%;
+  padding-left: 28px;
+}
+
+.steps-table th:nth-child(2),
+.steps-table td:nth-child(2) {
+  width: 32%;
+  text-align: center;
+}
+
+.steps-table th:nth-child(3),
+.steps-table td:nth-child(3) {
+  width: 30%;
+}
+
+/* скруглённая рамка только вокруг строк, заголовок снаружи */
+.steps-table tbody {
+  border: 2px solid var(--line);
+  border-radius: 32px;
+}
+
+.steps-table td {
+  padding: 13px 8px;
+  font-size: 16px;
+}
+
+.steps-table .empty {
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.icon-button {
+  padding: 4px 6px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.icon-button + .icon-button {
+  margin-left: 12px;
+}
+
+.icon-button:hover {
+  background-color: rgba(35, 35, 35, 0.08);
+}
+
+.icon-button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
+}
