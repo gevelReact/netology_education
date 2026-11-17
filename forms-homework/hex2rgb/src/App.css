@@ -1,0 +1,33 @@
+.converter {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.converter__input {
+  width: 320px;
+  max-width: 90vw;
+  padding: 18px 20px;
+  font-family: var(--mono), serif;
+  font-size: 24px;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.converter__result {
+  width: 320px;
+  max-width: 90vw;
+  padding: 18px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
