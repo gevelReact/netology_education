@@ -1,0 +1,18 @@
+:root {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.4;
+  color: #21201e;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #1d4ed8;
+}
