@@ -1,0 +1,93 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.app-header {
+  margin-bottom: 28px;
+}
+
+.app-title {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: #1d1d1f;
+}
+
+.app-hint {
+  margin: 0;
+  max-width: 640px;
+  font-size: 15px;
+  color: #666;
+}
+
+.app-hint code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: #f4f3ec;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 13px;
+}
+
+.watch-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.field input {
+  width: 220px;
+  padding: 8px 10px;
+  border: 1px solid #8a8a8a;
+  border-radius: 2px;
+  background: #fff;
+  color: #1d1d1f;
+}
+
+.field input:focus {
+  outline: 2px solid #4a76c4;
+  outline-offset: 1px;
+}
+
+.add-button {
+  padding: 8px 28px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  background: #fff;
+  color: #1d1d1f;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #f2f2f2;
+}
+
+.form-error {
+  margin: -16px 0 24px;
+  color: #a4343a;
+  font-size: 14px;
+}
+
+.empty {
+  color: #888;
+}
+
+.watch-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}

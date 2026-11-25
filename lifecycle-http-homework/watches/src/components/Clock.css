@@ -1,0 +1,99 @@
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.clock-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.clock-title {
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.clock-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid #b9b9b9;
+  border-radius: 50%;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.clock-delete:hover {
+  border-color: #a4343a;
+  color: #a4343a;
+}
+
+.clock-face {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: 50% 100%;
+  border-radius: 2px;
+}
+
+.hand--hours {
+  width: 4px;
+  height: 26%;
+  margin-left: -2px;
+  background: #333;
+}
+
+.hand--minutes {
+  width: 3px;
+  height: 38%;
+  margin-left: -1.5px;
+  background: #555;
+}
+
+.hand--seconds {
+  width: 1px;
+  height: 44%;
+  margin-left: -0.5px;
+  border-radius: 0;
+  background: repeating-linear-gradient(
+    to top,
+    #8a8a8a 0 3px,
+    transparent 3px 6px
+  );
+}
+
+.clock-pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.clock-digital {
+  margin-top: 8px;
+  font-family: ui-monospace, Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  color: #777;
+}
