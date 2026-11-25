@@ -1,0 +1,46 @@
+.note-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+  padding: 24px 32px;
+  border: 2px solid #111;
+  background: #fff;
+}
+
+.note-card-content {
+  margin: 0;
+  text-align: center;
+  line-height: 1.7;
+  color: #111;
+  overflow-wrap: anywhere;
+}
+
+/* Крестик в правом верхнем углу карточки, наполовину выступает за неё */
+.note-card-delete {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  background: #fff;
+  color: #e02b2b;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.note-card-delete:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.note-card-delete:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
