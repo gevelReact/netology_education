@@ -1,7 +1,17 @@
-import React, {useState} from 'react';
+import { useState } from 'react';
+import type { ComponentType } from 'react';
 import moment from 'moment';
 
-function getPrettyDate(date) {
+interface VideoItem {
+    url: string;
+    date: string;
+}
+
+interface DateProps {
+    date: string;
+}
+
+function getPrettyDate(date: string): string {
     const pubDate = moment(date, 'YYYY-MM-DD HH:mm:ss');
     const now = moment();
 
@@ -14,35 +24,41 @@ function getPrettyDate(date) {
     return '3 дня назад';
 }
 
-function DateTime(props) {
+function DateTime(props: DateProps) {
     return (
         <p className="date">{props.date}</p>
-    )
+    );
 }
 
-function withDateTimePretty(WrappedComponent) {
-    return function DateTimePretty(props) {
+function withDateTimePretty(WrappedComponent: ComponentType<DateProps>): ComponentType<DateProps> {
+    return function DateTimePretty(props: DateProps) {
         return <WrappedComponent date={getPrettyDate(props.date)} />;
-    }
+    };
 }
 
 const DateTimePretty = withDateTimePretty(DateTime);
 
-function Video(props) {
+function Video(props: VideoItem) {
     return (
         <div className="video">
-            <iframe src={props.url} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src={props.url} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             <DateTimePretty date={props.date} />
         </div>
-    )
+    );
 }
 
-function VideoList(props) {
-    return props.list.map(item => <Video url={item.url} date={item.date} />);
+interface VideoListProps {
+    list: VideoItem[];
 }
+
+function VideoList(props: VideoListProps) {
+    return props.list.map(item => <Video key={item.url} url={item.url} date={item.date} />);
+}
+
+type MomentUnit = moment.unitOfTime.DurationConstructor;
 
 export default function App() {
-    const [list] = useState(() => {
+    const [list] = useState<VideoItem[]>(() => {
         const now = moment();
         const urls = [
             'https://www.youtube.com/embed/rN6nlNC9WQA?rel=0&amp;controls=0&amp;showinfo=0',
@@ -52,7 +68,7 @@ export default function App() {
             'https://www.youtube.com/embed/TKmGU77INaM?rel=0&amp;controls=0&amp;showinfo=0',
             'https://www.youtube.com/embed/TxbE79-1OSI?rel=0&amp;controls=0&amp;showinfo=0',
         ];
-        const offsets = [
+        const offsets: Array<[number, MomentUnit]> = [
             [5, 'm'],    // → 12 минут назад
             [30, 'm'],   // → 12 минут назад
             [2, 'h'],    // → 5 часов назад
