@@ -1,59 +1,7 @@
 import { useState } from 'react';
-import type { ComponentType } from 'react';
 import moment from 'moment';
-
-interface VideoItem {
-    url: string;
-    date: string;
-}
-
-interface DateProps {
-    date: string;
-}
-
-function getPrettyDate(date: string): string {
-    const pubDate = moment(date, 'YYYY-MM-DD HH:mm:ss');
-    const now = moment();
-
-    if (now.diff(pubDate, 'minutes') < 60) {
-        return '12 минут назад';
-    }
-    if (now.diff(pubDate, 'days') < 1) {
-        return '5 часов назад';
-    }
-    return '3 дня назад';
-}
-
-function DateTime(props: DateProps) {
-    return (
-        <p className="date">{props.date}</p>
-    );
-}
-
-function withDateTimePretty(WrappedComponent: ComponentType<DateProps>): ComponentType<DateProps> {
-    return function DateTimePretty(props: DateProps) {
-        return <WrappedComponent date={getPrettyDate(props.date)} />;
-    };
-}
-
-const DateTimePretty = withDateTimePretty(DateTime);
-
-function Video(props: VideoItem) {
-    return (
-        <div className="video">
-            <iframe src={props.url} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
-            <DateTimePretty date={props.date} />
-        </div>
-    );
-}
-
-interface VideoListProps {
-    list: VideoItem[];
-}
-
-function VideoList(props: VideoListProps) {
-    return props.list.map(item => <Video key={item.url} url={item.url} date={item.date} />);
-}
+import type { VideoItem } from './types';
+import VideoList from './components/VideoList';
 
 type MomentUnit = moment.unitOfTime.DurationConstructor;
 
