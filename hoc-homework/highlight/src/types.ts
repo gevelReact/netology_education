@@ -14,6 +14,11 @@ export interface WrapperProps {
     children: ReactNode;
 }
 
+export enum ListItemType {
+    Video = 'video',
+    Article = 'article',
+}
+
 export type ListItem =
-    | ({ type: 'video' } & VideoProps)
-    | ({ type: 'article' } & ArticleProps);
+    | ({ type: ListItemType.Video } & VideoProps)
+    | ({ type: ListItemType.Article } & ArticleProps);
